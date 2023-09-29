@@ -1,6 +1,7 @@
 # notebook-hub
 
 ```yaml
+cat << EOF | kubectl apply -f -
 ---
 apiVersion: v1
 kind: Namespace
@@ -44,4 +45,5 @@ spec:
     singleuser:
       cloudMetadata:
         blockWithIptables: false
+EOF
 ```
