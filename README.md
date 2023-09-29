@@ -31,7 +31,7 @@ spec:
       version: '>=3.0.3'
   interval: 1h0s
   releaseName: jupyterhub
-  targetNamespace: flux-system
+  targetNamespace: weave-ai-system
   install:
     crds: Create
     remediation:
