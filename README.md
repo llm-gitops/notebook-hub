@@ -7,6 +7,22 @@ kind: Namespace
 metadata:
   name: weave-ai-system
 ---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  labels:
+    toolkit.fluxcd.io/tenant: hub
+  name: weave-ai-reconciler
+  namespace: weave-ai-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: hub
+  namespace: weave-ai-system
+---
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
